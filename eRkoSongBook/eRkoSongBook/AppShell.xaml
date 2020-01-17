@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:views="clr-namespace:eRkoSongBook.Views" 
+       mc:Ignorable="d"
+       x:Class="eRkoSongBook.AppShell">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style x:Key="ErkarikSongsShellStyle"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#ff0303" />
+        </Style>
+        <Style x:Key="DemonstrationsShellStyle"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#ffff12" />
+        </Style>
+        <Style x:Key="CarolsShellStyle"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#19b3cf" />
+        </Style>
+    </Shell.Resources>
+
+    <FlyoutItem Title="eRko Spevník" Route="eRkoSpevnik" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab
+            Title="eRkárik"
+            Route="eRkarik">
+            <ShellContent
+                Route="eRkarik"
+                Title="eRkárik"
+                Style="{StaticResource ErkarikSongsShellStyle}"
+                ContentTemplate="{DataTemplate views:ErkarikSongsOverviewPage}"
+            />
+        </Tab>
+        <Tab
+            Title="Ukazovačky"
+            Route="demonstrations">
+            <ShellContent
+                Route="demonstrations"
+                Title="Ukazovačky"
+                Style="{StaticResource DemonstrationsShellStyle}"
+                ContentTemplate="{DataTemplate views:DemonstrationsOverviewPage}"
+            />
+        </Tab>
+        <Tab
+            Title="Koledy"
+            Route="carols">
+            <ShellContent
+                Route="carols"
+                Title="Koledy"
+                Style="{StaticResource CarolsShellStyle}"
+                ContentTemplate="{DataTemplate views:CarolsOverviewPage}"
+            />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>
