@@ -16,7 +16,13 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
     
-        <ListView Grid.Row="0" VerticalOptions="FillAndExpand" x:Name="CarolsListView" CachingStrategy="RecycleElement" ItemsSource="{Binding Carols}">
+        <ListView
+            Grid.Row="0"
+            VerticalOptions="FillAndExpand"
+            x:Name="CarolsListView"
+            CachingStrategy="RecycleElement"
+            ItemsSource="{Binding Carols}"
+            ItemSelected="OnCarolSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell

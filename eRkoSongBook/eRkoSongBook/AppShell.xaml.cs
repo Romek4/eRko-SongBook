@@ -1,4 +1,5 @@
 ﻿
+using eRkoSongBook.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,8 @@ namespace eRkoSongBook
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("caroldetails", typeof(CarolDetailsPage));
         }
     }
 }
