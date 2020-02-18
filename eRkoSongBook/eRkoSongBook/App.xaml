@@ -6,6 +6,17 @@
              mc:Ignorable="d"
              x:Class="eRkoSongBook.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style x:Key="SongTitleStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
+        </ResourceDictionary>
+        <ResourceDictionary>
+            <Style x:Key="SongTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Body"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
